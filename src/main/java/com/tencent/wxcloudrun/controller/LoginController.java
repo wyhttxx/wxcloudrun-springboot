@@ -27,7 +27,7 @@ public class LoginController {
             return map;
         }
 
-        String url = new ComonUtils().appendUrl("0739s40w3K3euZ23mh0w3Rsll209s40b").toString();
+        String url = new ComonUtils().appendUrl((String) codeMap.get("code")).toString();
         RestTemplate restTemplate = new RestTemplate();
 
         //用restTemplate请求url，得到openid和session_key
@@ -62,7 +62,7 @@ public class LoginController {
 //        redis.set("userSession:" + appUserModel.getOpenid(), appUserModel.getSession_key(),
 //                60*10);
         //System.out.println(openid);
-        map.put("sessionId","userSession:" + appUserModel.getOpenid());
+        map.put("sessionId","userSession:" + appUserModel.getSession_key());
         map.put("success", true);
         map.put("openid","openid:"+appUserModel.getOpenid());
         System.out.println(map);
