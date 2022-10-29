@@ -46,11 +46,11 @@ public class LoginController {
             map.put("errmsg","code 无效");
             return map;
         }
-        String openid = "";
-        String session_key = "";
-        String[] strings = reponse.split(",");
-        openid = strings[1].substring(10, strings[1].length()-2);
-        session_key = strings[0].substring(16, strings[0].length()-1);
+//        String openid = "";
+//        String session_key = "";
+//        String[] strings = reponse.split(",");
+//        openid = strings[1].substring(10, strings[1].length()-2);
+//        session_key = strings[0].substring(16, strings[0].length()-1);
 
         AppUserModel appUserModel = new AppUserModel();
         appUserModel.setOpenid((String) responseMap.get("openid"));
